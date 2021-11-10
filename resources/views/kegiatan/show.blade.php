@@ -13,6 +13,7 @@
                         <h5 class="card-title">{{$activity->nama_activity}}</h5>
                         <h6 class="card-title">{{$activity->tgl_awal}} - {{$activity->tgl_selesai}}</h6>
                         <h6 class="card-title">{{$activity->idr}}</h6>
+                        <h6 class="card-title">{{$activity->peserta}}</h6>
                         @if($activity->status == 'Cooming Soon')
                             <div class="alert alert-danger" role="alert">
                                 <h3 class="text-white">{{$activity->status}}</h3>

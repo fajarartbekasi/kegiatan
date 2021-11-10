@@ -73,7 +73,7 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="">Jumlah Peserta</label>
-                            <input type="date" name="peserta" class="form-control" id="">
+                            <input type="number" name="peserta" class="form-control" id="">
                         </div>
                     </div>
                     <div class="col-md-12">

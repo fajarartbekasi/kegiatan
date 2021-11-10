@@ -31,6 +31,7 @@ class KegiatanController extends Controller
             'desc'          => 'required',
             'tgl_awal'      => 'required',
             'tgl_selesai'   => 'required',
+            'peserta'       => 'required',
             'image'         => 'required|mimes:jpeg,jpg,png|max:5000',
         ]), function(){
             if(request()->hasFile('image')){
