@@ -21,6 +21,7 @@ class CreateActivitysTable extends Migration
             $table->string('idr');
             $table->string('status');
             $table->string('desc');
+            $table->string('peserta');
             $table->string('tgl_awal');
             $table->string('tgl_selesai');
             $table->timestamps();

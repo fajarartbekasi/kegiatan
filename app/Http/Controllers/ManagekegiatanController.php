@@ -37,6 +37,7 @@ class ManagekegiatanController extends Controller
             'idr'             => 'required',
             'status'          => 'required',
             'desc'            => 'required',
+            'peserta'         => 'required',
         ]), function(){
             if(request()->hasFile('image')){
                 request()->validate([

@@ -23,7 +23,7 @@
                         <div class="form-group">
                             <label for="">Nama Kegiatan</label>
                             <input type="text" name="nama_activity" class="form-control" id=""
-                            value="Judul Kegiatan">
+                            >
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -36,7 +36,7 @@
                         <div class="form-group">
                             <label for="">IDR</label>
                             <input type="text" name="idr" class="form-control"
-                            id="" value="RP.">
+                            id="" >
                         </div>
                     </div>
                     <div class="col-md-3">
@@ -68,6 +68,12 @@
                         <div class="form-group">
                             <label for="">Tanggal Selesai</label>
                             <input type="date" name="tgl_selesai" class="form-control" id="">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="">Jumlah Peserta</label>
+                            <input type="date" name="peserta" class="form-control" id="">
                         </div>
                     </div>
                     <div class="col-md-12">
