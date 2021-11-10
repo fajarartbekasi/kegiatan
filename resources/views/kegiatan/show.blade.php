@@ -20,7 +20,7 @@
                             </div>
                         @elseif($activity->status == 'Aktif')
                             <a href="#" class="btn btn-info">Daftar</a>
-                        @elseif($activy->status == 'Non-Aktif')
+                        @elseif($activity->status == 'Non-Aktif')
                             <div class="alert alert-secondary" role="alert">
                                 <h3 class="text-white">{{$activity->status}}</h3>
                             </div>
