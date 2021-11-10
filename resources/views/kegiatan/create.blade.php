@@ -16,7 +16,7 @@
                 Silahkan isi data dibawah ini dengan benar.
             </div>
 
-            <form action="{{route('kegiatan.store')}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('manage-kegiatan.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-md-3">

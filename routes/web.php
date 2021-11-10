@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::group(['prefix'=>'kegiatan'], function(){
     route::get('tampilkan', 'KegiatanController@show')->name('kegiatan.tampilkan');
-    route::post('/store', 'KegiatanController@store')->name('kegiatan.store');
+
 });
 
 Route::group(['prefix' => 'data'], function(){
@@ -35,6 +35,7 @@ Route::group(['prefix'  => 'manage-kegiatan'], function(){
     route::get('/','ManagekegiatanController@index')->name('manage-kegiatan');
     route::get('/add-form','ManagekegiatanController@create')->name('manage-kegiatan.add-form');
     route::get('/add-form/edit-kegiatan','ManagekegiatanController@edit')->name('manage-kegiatan.add-form.edit-kegiatan');
+    route::post('/store', 'ManagekegiatanController@store')->name('manage-kegiatan.store');
 });
 
 Route::group(['prefix' => 'verifikasi-pendaftaran'], function(){
