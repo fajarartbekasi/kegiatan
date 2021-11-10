@@ -49,7 +49,7 @@
                                     <td>Aktif</td>
                                     <td>
                                         <a href="{{route('edit-data.siswa')}}" class="btn btn-secondary btn-sm">Edit</a>
-                                        <button type="submit" class="btn btn-secondary">Hapus</button>
+                                        <button type="submit" class="btn btn-secondary btn-sm">Hapus</button>
                                     </td>
                                 </tr>
                             </tbody>

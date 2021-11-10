@@ -35,24 +35,24 @@
                                 <tr>
                                     <th>Kode Kegiatan</th>
                                     <th>Nama Kegiatan</th>
-                                    <th>Jumlah Peserta</th>
                                     <th>IDR</th>
                                     <th>Status</th>
                                     <th>Option</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1231312</td>
-                                    <td>Pensi Tahunan</td>
-                                    <td>100</td>
-                                    <td>RP.150.000</td>
-                                    <td>Aktif</td>
-                                    <td>
-                                        <a href="{{route('edit-data.siswa')}}" class="btn btn-secondary btn-sm">Edit</a>
-                                        <button type="submit" class="btn btn-secondary btn-sm">Hapus</button>
-                                    </td>
-                                </tr>
+                                @foreach($activitys as $activity)
+                                    <tr>
+                                        <td>{{$activity->kode_activity}}</td>
+                                        <td>{{$activity->nama_activity}}</td>
+                                        <td>{{$activity->idr}}</td>
+                                        <td>{{$activity->status}}</td>
+                                        <td>
+                                            <a href="{{route('edit-data.siswa')}}" class="btn btn-secondary btn-sm">Edit</a>
+                                            <button type="submit" class="btn btn-secondary btn-sm">Hapus</button>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

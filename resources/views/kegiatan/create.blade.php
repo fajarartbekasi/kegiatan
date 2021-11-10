@@ -16,21 +16,13 @@
                 Silahkan isi data dibawah ini dengan benar.
             </div>
 
-            <form action="" method="post">
+            <form action="{{route('kegiatan.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
-
                 <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label for="">Kode Kegiatan</label>
-                            <input type="text" name="kode_kegiatan" class="form-control"
-                            id="" value="kode kegiatan">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-group">
                             <label for="">Nama Kegiatan</label>
-                            <input type="text" name="judul" class="form-control" id=""
+                            <input type="text" name="nama_activity" class="form-control" id=""
                             value="Judul Kegiatan">
                         </div>
                     </div>
@@ -54,13 +46,14 @@
                                 <option value="">Silahkan Pilih Status</option>
                                 <option value="Aktif">Aktif</option>
                                 <option value="Non-Aktif">Non-Aktif</option>
+                                <option value="Cooming Soon">Cooming Soon</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="">Keterangan</label>
-                            <textarea name="keteranga" id="" class="form-control" >
+                            <textarea name="desc" id="" class="form-control" >
 
                             </textarea>
                         </div>
