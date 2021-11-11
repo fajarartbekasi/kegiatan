@@ -50,59 +50,34 @@
                                 Silahkan Login Terlebih dahulu
                             </div>
                     @else
-                        <form action="" method="post">
+                        <form action="{{route('kegiatan.store', $activity->id)}}" method="post">
+                            @csrf
                             <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="">Nisn</label>
-                                        <input type="text" class="form-control" name="" >
-                                    </div>
-                                </div>
+
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="">Nama</label>
-                                        <input type="text" class="form-control" name="" value="{{ Auth::user()->name }}">
+                                        <input type="text" class="form-control" value="{{ Auth::user()->name }}">
                                     </div>
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="">Kelas</label>
-                                        <select name="" id="" class="form-control">
-                                            <option value="">Pilih Kelas</option>
-                                            <option value="X">X</option>
-                                            <option value="XI">XI</option>
-                                            <option value="XII">XII</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label for="">Jurusan</label>
-                                        <select name="" id="" class="form-control">
-                                            <option value="">Pilih Jurusan</option>
-                                            <option value="AK">AK</option>
-                                            <option value="AP">AP</option>
-                                            <option value="MM/RPL">MM/RPL</option>
-                                            <option value="TKJ">TKJ</option>
-                                            <option value="TEI">TEI</option>
-                                            <option value="TKR">TKR</option>
-                                        </select>
-                                    </div>
-                                </div>
+
+
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="">Kode Kegiatan</label>
-                                        <input type="text" class="form-control" name="" value="{{$activity->kode_activity}}">
+                                        <input type="text" class="form-control" value="{{$activity->kode_activity}}">
+                                        <input type="hidden" class="form-control" name="activity_id" value="{{$activity->id}}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label for="">Harga</label>
-                                        <input type="text" class="form-control" name="" value="{{$activity->idr}}">
+                                        <input type="text" class="form-control" value="{{$activity->idr}}">
                                     </div>
                                 </div>
+                                <input type="hidden" name="status" class="form-control" value="pending" >
                                 <div class="ml-3">
-                                    <btn:submit class="btn btn-info">Simpan pendaftaran</btn:submit>
+                                    <button type="submit" class="btn btn-info"> Simpan pendaftaran</button>
                                 </div>
                             </div>
                         </form>

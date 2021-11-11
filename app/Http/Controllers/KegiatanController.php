@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Register;
 use App\Activity;
+use App\Mail\PendaftaranMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Auth;
 
 class KegiatanController extends Controller
 {
@@ -20,5 +25,21 @@ class KegiatanController extends Controller
         $activity = Activity::findOrFail($id);
 
         return view('daftar.create', compact('activity'));
+    }
+    public function store(Request $request, $id)
+    {
+
+        $user = User::findOrFail($id);
+
+        $register =  Register::create([
+                        'user_id'       => $user->id,
+                        'activity_id'   => $request->activity_id,
+                        'status'        => $request->status,
+                    ]);
+
+        $to = Mail::to($user->email)
+                    ->send(new PendaftaranMail($register));
+
+        return redirect()->back();
     }
 }

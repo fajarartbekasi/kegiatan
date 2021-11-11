@@ -18,6 +18,7 @@ Route::get('/', function () {
 Route::group(['prefix'=>'kegiatan'], function(){
     route::get('tampilkan', 'KegiatanController@show')->name('kegiatan.tampilkan');
     route::get('create/{kegiatan}', 'KegiatanController@create')->name('kegiatan.create');
+    route::post('store/{user}', 'KegiatanController@store')->name('kegiatan.store');
 
 });
 
@@ -43,6 +44,11 @@ Route::group(['prefix' => 'verifikasi-pendaftaran'], function(){
     route::get('/','VerifikasiController@index')->name('verifikasi-pendaftaran');
     route::get('/ulang','DaftarulangController@index')->name('verifikasi-pendaftaran.ulang');
     route::get('/peserta','PesertaController@index')->name('verifikasi-pendaftaran.peserta');
+});
+
+Route::group(['prefix' => 'user'], function(){
+    route::get('ambil-form/{register}','PaymentController@create')
+    ->name('user.ambil-form');
 });
 Auth::routes();
 
