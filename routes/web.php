@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::group(['prefix'=>'kegiatan'], function(){
     route::get('tampilkan', 'KegiatanController@show')->name('kegiatan.tampilkan');
+    route::get('create/{kegiatan}', 'KegiatanController@create')->name('kegiatan.create');
 
 });
 

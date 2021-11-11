@@ -15,4 +15,10 @@ class KegiatanController extends Controller
 
         return view('kegiatan.show', compact('activitys'));
     }
+    public function create($id)
+    {
+        $activity = Activity::findOrFail($id);
+
+        return view('daftar.create', compact('activity'));
+    }
 }

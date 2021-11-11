@@ -19,7 +19,7 @@
                                 <h3 class="text-white">{{$activity->status}}</h3>
                             </div>
                         @elseif($activity->status == 'Aktif')
-                            <a href="#" class="btn btn-info btn-block">Daftar</a>
+                            <a href="{{route('kegiatan.create', $activity->id)}}" class="btn btn-info btn-block">Daftar</a>
                         @elseif($activity->status == 'Non-Aktif')
                             <div class="alert alert-secondary" role="alert">
                                 <h3 class="text-white">{{$activity->status}}</h3>
