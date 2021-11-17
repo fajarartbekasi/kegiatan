@@ -39,23 +39,25 @@
                                     <th>Nama</th>
                                     <th>TGL. Daftar</th>
                                     <th>Status</th>
-                                    <th>Option</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1231312</td>
-                                    <td>Pensi Tahunan</td>
-                                    <td>100</td>
-                                    <td>RP.150.000</td>
-                                    <td>Aktif</td>
-                                    <td>
-                                        <a href="{{route('edit-data.siswa')}}" class="btn btn-secondary btn-sm">Edit</a>
-                                        <button type="submit" class="btn btn-secondary btn-sm">Hapus</button>
-                                    </td>
-                                </tr>
+                                @foreach($verifikasiPembayarans as $pembayaran)
+                                    <tr>
+                                        <td>{{$pembayaran->activity->kode_activity}}</td>
+                                        <td>Nis Belum</td>
+                                        <td>{{$pembayaran->user->name}}</td>
+                                        <td>{{$pembayaran->created_at->diffForHumans()}}</td>
+                                        <td>
+                                            <span class="badge bg-secondary text-white">
+                                                {{$pembayaran->status}}
+                                            </span>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
+                        {{$verifikasiPembayarans->links()}}
                     </div>
                 </div>
             </div>

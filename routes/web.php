@@ -47,8 +47,8 @@ Route::group(['prefix' => 'verifikasi-pendaftaran'], function(){
 });
 
 Route::group(['prefix' => 'user'], function(){
-    route::get('ambil-form/{register}','PaymentController@create')
-    ->name('user.ambil-form');
+    route::get('ambil-form/{register}','PaymentController@create')->name('user.ambil-form');
+    route::post('verifikasi-pembayaran','PaymentController@store')->name('user.verifikasi-pembayaran');
 });
 Auth::routes();
 
