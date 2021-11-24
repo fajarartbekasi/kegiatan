@@ -9,7 +9,7 @@
                     <div class="mb-3">
                         <a href="{{route('verifikasi-pendaftaran.ulang')}}"
                         class="btn btn-secondary">Daftar Ulang</a>
-                        <a href="{{route('manage-kegiatan.add-form')}}"
+                        <a href="{{route('verifikasi-pendaftaran.peserta')}}"
                         class="btn btn-secondary">Peserta</a>
                     </div>
                     <form action="" method="post">
@@ -43,17 +43,26 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1231312</td>
-                                    <td>Pensi Tahunan</td>
-                                    <td>100</td>
-                                    <td>RP.150.000</td>
-                                    <td>Aktif</td>
-                                    <td>
-                                        <a href="{{route('edit-data.siswa')}}" class="btn btn-secondary btn-sm">Edit</a>
-                                        <button type="submit" class="btn btn-secondary btn-sm">Hapus</button>
-                                    </td>
-                                </tr>
+                                @foreach($registers as $register)
+                                    <tr>
+                                        <td>{{$register->activity->kode_activity}}</td>
+                                        <td>Field Belum dibuat</td>
+                                        <td>{{$register->user->name}}</td>
+                                        <td>{{$register->created_at->diffForHumans()}}</td>
+                                        <td>
+                                            <span class="badge badge-info">
+                                                {{$register->status}}
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <form action="{{route('verifikasi-pendaftaran.accept', $register->id)}}" method="post">
+                                                @csrf
+                                                @method('PATCH')
+                                                <button class="btn btn-info btn-sm">tambah peserta</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

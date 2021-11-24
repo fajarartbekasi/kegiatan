@@ -8,8 +8,8 @@
                 <div class="card-body">
                     <div class="mb-3">
                         <a href="{{route('verifikasi-pendaftaran.ulang')}}"
-                        class="btn btn-secondary">Daftar Ulang</a>
-                        <a href="{{route('manage-kegiatan.add-form')}}"
+                            class="btn btn-secondary">Daftar Ulang</a>
+                        <a href="{{route('verifikasi-pendaftaran.peserta')}}"
                         class="btn btn-secondary">Peserta</a>
                     </div>
                     <form action="" method="post">

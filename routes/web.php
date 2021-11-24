@@ -44,6 +44,7 @@ Route::group(['prefix' => 'verifikasi-pendaftaran'], function(){
     route::get('/','VerifikasiController@index')->name('verifikasi-pendaftaran');
     route::get('/ulang','DaftarulangController@index')->name('verifikasi-pendaftaran.ulang');
     route::get('/peserta','PesertaController@index')->name('verifikasi-pendaftaran.peserta');
+    route::patch('/accept/{register}','PesertaController@store')->name('verifikasi-pendaftaran.accept');
 });
 
 Route::group(['prefix' => 'user'], function(){

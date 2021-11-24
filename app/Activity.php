@@ -23,4 +23,9 @@ class Activity extends Model
             ]
         ];
     }
+
+    public function registers()
+    {
+        return $this->hasMany(Register::class);
+    }
 }

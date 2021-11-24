@@ -45,9 +45,6 @@
                         <li class="nav-item">
                             <a href="{{route('verifikasi-pendaftaran')}}" class="nav-link">{{ __('Verifikasi Pendaftaran ') }}</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link">{{ __('Laporan') }}</a>
-                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
