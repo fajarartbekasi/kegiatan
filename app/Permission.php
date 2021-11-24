@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Permission extends \Spatie\Permission\Models\Permission
 {
-    public static function defaultPermission()
+    public static function defaultPermissions()
     {
         return [
             'invite',

@@ -25,7 +25,7 @@ class UsersTableSeeder extends Seeder
         $admin->assignRole('admin');
 
         $this->command->info('>_ Here is your admin details to login:');
-        $this->command->warn($ketua->email);
+        $this->command->warn($admin->email);
         $this->command->warn('Password is "albahri"');
 
         // bendahara
