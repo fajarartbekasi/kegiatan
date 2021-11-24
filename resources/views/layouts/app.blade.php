@@ -36,15 +36,19 @@
                         <li class="nav-item">
                             <a href="{{route('home')}}" class="nav-link" >{{ __('Dashboard') }}</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{route('data.siswa')}}" class="nav-link">{{ __('Data Siswa') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route('manage-kegiatan')}}" class="nav-link">{{ __('Manage Kegiatan') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route('verifikasi-pendaftaran')}}" class="nav-link">{{ __('Verifikasi Pendaftaran ') }}</a>
-                        </li>
+                        @role('admin')
+                            <li class="nav-item">
+                                <a href="{{route('data.siswa')}}" class="nav-link">{{ __('Data Siswa') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('manage-kegiatan')}}" class="nav-link">{{ __('Manage Kegiatan') }}</a>
+                            </li>
+                        @endrole
+                        @role('bendahara')
+                            <li class="nav-item">
+                                <a href="{{route('verifikasi-pendaftaran')}}" class="nav-link">{{ __('Verifikasi Pendaftaran ') }}</a>
+                            </li>
+                        @endrole
                     </ul>
 
                     <!-- Right Side Of Navbar -->
