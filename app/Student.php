@@ -11,4 +11,9 @@ class Student extends Model
         'user_id','nisn','gender','religion','major','class',
         'phone','status'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

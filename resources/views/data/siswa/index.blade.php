@@ -41,17 +41,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1231312</td>
-                                    <td>John Doe</td>
-                                    <td>XII</td>
-                                    <td>RPL</td>
-                                    <td>Aktif</td>
-                                    <td>
-                                        <a href="{{route('edit-data.siswa')}}" class="btn btn-secondary btn-sm">Edit</a>
-                                        <button type="submit" class="btn btn-secondary btn-sm">Hapus</button>
-                                    </td>
-                                </tr>
+                                @foreach ($students as $student)
+                                    <tr>
+                                        <td>{{$student->users->first()->students->first()->nisn ?? 'Belum tersedia'}}</td>
+                                        <td>{{$student->users->first()->name}}</td>
+                                        <td>{{$student->users->first()->students->first()->class ?? 'Belum tersedia'}}</td>
+                                        <td>{{$student->users->first()->students->first()->major ?? 'Belum tersedia'}}</td>
+                                        <td>{{$student->users->first()->students->first()->status ?? 'Belum tersedia'}}</td>
+                                        <td>
+                                            <a href="{{route('edit-data.siswa')}}" class="btn btn-secondary btn-sm">Edit</a>
+                                            <button type="submit" class="btn btn-secondary btn-sm">Hapus</button>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
