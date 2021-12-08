@@ -6,8 +6,8 @@
     <div class="row">
         <div class="col-md-4">
             <div class="card border-0">
+                <img src="{{url('storage/'. $activity->image)}}" alt="" class="img-card-top">
                 <div class="card-body">
-                    <img src="{{url('storage/'. $activity->image)}}" alt="" class="img-card-top" srcset="">
 
                     <div>
                         <div class="d-flex">
@@ -50,7 +50,7 @@
                                 Silahkan Login Terlebih dahulu
                             </div>
                     @else
-                        <form action="{{route('kegiatan.store', $activity->id)}}" method="post">
+                        <form action="{{route('kegiatan.store')}}" method="post">
                             @csrf
                             <div class="row">
 

@@ -8,6 +8,7 @@
         @foreach($activitys as $activity)
             <div class="col-md-3">
                 <div class="card" >
+
                     <img src="{{url('storage/'. $activity->image)}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{$activity->nama_activity}}</h5>

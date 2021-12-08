@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Activity;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class ManagekegiatanController extends Controller
 {

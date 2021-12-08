@@ -49,6 +49,11 @@
                                 <a href="{{route('verifikasi-pendaftaran')}}" class="nav-link">{{ __('Verifikasi Pendaftaran ') }}</a>
                             </li>
                         @endrole
+                        @role('student')
+                            <li class="nav-item">
+                                <a href="{{route('kegiatan.tampilkan')}}" class="nav-link">{{ __('Cek Kegiatan') }}</a>
+                            </li>
+                        @endrole
                     </ul>
 
                     <!-- Right Side Of Navbar -->
