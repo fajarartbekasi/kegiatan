@@ -60,11 +60,24 @@ class DatasiswaController extends Controller
         $student = User::findOrFail($id);
         return view('data.siswa.edit', compact('student'));
     }
-    public function update(Request $request, $id)
+    public function updated(Request $request, $id)
     {
         $student = Student::where('user_id', '=' , $id)->firstOrFail();
 
         $student->update($request->all());
+
+        return redirect()->back();
+    }
+    public function destroy(Request $request,$id)
+    {
+
+        $student = Student::where('user_id', '=' , $id)->firstOrFail();
+
+        if($student->delete()){
+            $user = User::findOrFail($id);
+
+            $user->delete();
+        }
 
         return redirect()->back();
     }

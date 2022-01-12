@@ -49,8 +49,12 @@
                                         <td>{{$student->students->first()->major ?? 'Belum tersedia'}}</td>
                                         <td>{{$student->students->first()->status ?? 'Belum tersedia'}}</td>
                                         <td>
-                                            <a href="{{route('edit-data.siswa', $student->id)}}" class="btn btn-secondary btn-sm">Edit</a>
-                                            <button type="submit" class="btn btn-secondary btn-sm">Hapus</button>
+                                            <form action="{{route('destroy.data.siswa', $student->id)}}" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <a href="{{route('edit-data.siswa', $student->id)}}" class="btn btn-secondary btn-sm">Edit</a>
+                                                <button type="submit" class="btn btn-secondary btn-sm">Hapus</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach
