@@ -48,7 +48,7 @@
                                         <td>{{$activity->idr}}</td>
                                         <td>{{$activity->status}}</td>
                                         <td>
-                                            <a href="{{route('edit-data.siswa')}}" class="btn btn-secondary btn-sm">Edit</a>
+                                            <a href="{{route('edit-data.activity', $activity->id)}}" class="btn btn-secondary btn-sm">Edit</a>
                                             <button type="submit" class="btn btn-secondary btn-sm">Hapus</button>
                                         </td>
                                     </tr>

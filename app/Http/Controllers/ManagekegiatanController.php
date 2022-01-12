@@ -26,6 +26,12 @@ class ManagekegiatanController extends Controller
 
         return redirect()->back();
     }
+    public function edit($id)
+    {
+        $activity = Activity::findOrFail($id);
+
+        return view('kegiatan.edit', compact('activity'));
+    }
     private function validateRequest(){
         return tap(request()->validate([
             'nama_activity' => 'required',
@@ -43,6 +49,13 @@ class ManagekegiatanController extends Controller
                 ]);
             }
         });
+    }
+    public function updated(Request $request, Activity $activity)
+    {
+        $activity->update($request->all());
+        $this->storeImage($activity);
+
+        return redirect()->back();
     }
     private function storeImage($activity){
         if(request()->has('image')){

@@ -55,8 +55,17 @@ class DatasiswaController extends Controller
 
         return redirect()->back();
     }
-    public function edit()
+    public function edit($id)
     {
-        return view('data.siswa.edit');
+        $student = User::findOrFail($id);
+        return view('data.siswa.edit', compact('student'));
+    }
+    public function update(Request $request, $id)
+    {
+        $student = Student::where('user_id', '=' , $id)->firstOrFail();
+
+        $student->update($request->all());
+
+        return redirect()->back();
     }
 }

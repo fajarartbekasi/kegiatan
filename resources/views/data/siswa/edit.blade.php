@@ -16,26 +16,26 @@
                 Silahkan isi data dibawah ini dengan benar.
             </div>
 
-            <form action="" method="post">
+            <form action="{{route('updated.data.siswa', $student->id)}}" method="post">
                 @csrf
-
+                @method('PATCH')
                 <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="">NISN</label>
-                            <input type="text" name="nisn" class="form-control" id="" value="NISN">
+                            <input type="text" name="nisn" class="form-control" id="" >
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="">Nama</label>
-                            <input type="text" name="nama" class="form-control" id="" value="NISN">
+                            <input type="text"  class="form-control" id="" value="{{$student->name}}">
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="">Jenis Kelamin</label>
-                            <select name="jenis_kelamin" class="form-control" id="">
+                            <select name="gender" class="form-control" id="">
                                 <option value="">Silahkan Pilih Jenis Kelamin</option>
                                 <option value="laki-laki">Laki - Laki</option>
                                 <option value="perempuan">Perempuan</option>
@@ -45,7 +45,7 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="">Agama</label>
-                            <select name="agama" class="form-control" id="">
+                            <select name="religion" class="form-control" id="">
                                 <option value="">Silahkan Pilih Agama</option>
                                 <option value="Islam">Islam</option>
                                 <option value="Kristen">Kristen</option>
@@ -57,7 +57,7 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="">Jurusan</label>
-                            <select name="jurusan" class="form-control" id="">
+                            <select name="major" class="form-control" id="">
                                 <option value="">Silahkan Pilih Jurusan</option>
                                 <option value="AK">AK</option>
                                 <option value="AP">AP</option>
@@ -70,13 +70,17 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="">Kelas</label>
-                            <select name="kelas" class="form-control" id="">
+                            <select name="class" class="form-control" id="">
                                 <option value="">Silahkan Pilih kelas</option>
                                 <option value="X">X</option>
                                 <option value="XI">XI</option>
                                 <option value="XII">XII</option>
                             </select>
                         </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="">Nomor telphone</label>
+                        <input type="text" name="phone"  id="" class="form-control">
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
