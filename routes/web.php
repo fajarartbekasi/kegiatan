@@ -66,6 +66,7 @@ Route::group(['prefix'=>'updated'], function(){
 
 Route::group(['prefix' =>'destroy'], function(){
     route::delete('data/siswa/{user}','DatasiswaController@destroy')->name('destroy.data.siswa');
+    route::delete('data/activity/{activity}','ManagekegiatanController@destroy')->name('destroy.data.activity');
 });
 Auth::routes();
 

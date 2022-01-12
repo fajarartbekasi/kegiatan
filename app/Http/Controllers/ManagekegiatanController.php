@@ -50,6 +50,17 @@ class ManagekegiatanController extends Controller
             }
         });
     }
+    public function destroy(Request $request, $id)
+    {
+        $activity = Activity::findOrFail($id);
+        $activity->delete($request->all());
+
+        if (\File::exists(public_path('storage/' . $activity->image))) {
+            \File::delete(public_path('storage/' . $activity->image));
+        }
+
+        return redirect()->back();
+    }
     public function updated(Request $request, Activity $activity)
     {
         $activity->update($request->all());

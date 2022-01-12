@@ -48,8 +48,12 @@
                                         <td>{{$activity->idr}}</td>
                                         <td>{{$activity->status}}</td>
                                         <td>
-                                            <a href="{{route('edit-data.activity', $activity->id)}}" class="btn btn-secondary btn-sm">Edit</a>
-                                            <button type="submit" class="btn btn-secondary btn-sm">Hapus</button>
+                                            <form action="{{route('destroy.data.activity', $activity->id)}}" method="post">
+                                                @csrf
+                                                @method('DELETE')
+                                                <a href="{{route('edit-data.activity', $activity->id)}}" class="btn btn-secondary btn-sm">Edit</a>
+                                                <button type="submit" class="btn btn-secondary btn-sm">Hapus</button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach
