@@ -68,6 +68,12 @@ Route::group(['prefix' =>'destroy'], function(){
     route::delete('data/siswa/{user}','DatasiswaController@destroy')->name('destroy.data.siswa');
     route::delete('data/activity/{activity}','ManagekegiatanController@destroy')->name('destroy.data.activity');
 });
+
+Route::group(['prefix' => 'cetak'], function(){
+    route::get('activity',
+    'Report\ActivityController@index')
+    ->name('cetak.activity');
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

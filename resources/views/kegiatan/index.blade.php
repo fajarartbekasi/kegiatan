@@ -10,17 +10,18 @@
                     <div class="mb-3">
                         <a href="{{route('manage-kegiatan.add-form')}}"
                         class="btn btn-secondary">Tambah Kegiatan</a>
+                        <a href="{{route('manage-kegiatan.add-form')}}" class="btn btn-secondary">Cetak semua data</a>
                     </div>
-                    <form action="" method="post">
+                    <form action="{{route('cetak.activity')}}" method="get">
                         <div class="row">
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <input type="date" class="form-control">
+                                    <input type="date" name="awal" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <input type="date" class="form-control">
+                                    <input type="date" name="akhir" class="form-control">
                                 </div>
                             </div>
                             <div>
@@ -37,6 +38,7 @@
                                     <th>Nama Kegiatan</th>
                                     <th>IDR</th>
                                     <th>Status</th>
+                                    <th>Tanggal</th>
                                     <th>Option</th>
                                 </tr>
                             </thead>
@@ -47,6 +49,7 @@
                                         <td>{{$activity->nama_activity}}</td>
                                         <td>{{$activity->idr}}</td>
                                         <td>{{$activity->status}}</td>
+                                        <td>{{$activity->created_at->format('Y-m-d')}}</td>
                                         <td>
                                             <form action="{{route('destroy.data.activity', $activity->id)}}" method="post">
                                                 @csrf
