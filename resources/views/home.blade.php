@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
+    <div class="row" style="margin-top: -70px">
         @role('admin')
             <div class="col-md-4">
                 <div class="card">
