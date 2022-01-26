@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'WelcomeController@index')->name('/');
 
 Route::group(['prefix'=>'kegiatan'], function(){
     route::get('tampilkan', 'KegiatanController@show')->name('kegiatan.tampilkan');
