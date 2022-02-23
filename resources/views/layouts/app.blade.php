@@ -33,9 +33,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a href="{{route('home')}}" class="nav-link" >{{ __('Dashboard') }}</a>
-                        </li>
+                        @auth()
+                            <li class="nav-item">
+                                <a href="{{route('home')}}" class="nav-link">{{ __('Dashboard') }}</a>
+                            </li>
+                        @endauth
+
                         @role('admin')
                             <li class="nav-item">
                                 <a href="{{route('data.siswa')}}" class="nav-link">{{ __('Data Siswa') }}</a>
@@ -52,6 +55,9 @@
                         @role('student')
                             <li class="nav-item">
                                 <a href="{{route('/')}}" class="nav-link">{{ __('Cek Kegiatan') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{route('activity')}}" class="nav-link">{{ __('Kegiatan Ku') }}</a>
                             </li>
                         @endrole
                     </ul>
