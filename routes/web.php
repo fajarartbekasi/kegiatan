@@ -79,3 +79,7 @@ route::get('cetak/sertifikat/{register}', 'Pendaftaran\VerifiedController@sertif
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+route::get('resoult/{register}',
+'ResoultController@show')
+->name('resoult');
